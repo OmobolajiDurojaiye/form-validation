@@ -9,20 +9,174 @@
 </head>
 <body>
     
-    <div class="container">
+    <div class="container-fluid">
+
+        <!--row for nav bar-->
         <div class="row">
 
             <div class="col">
+                <nav class="navbar bb-nav navbar-expand-lg bg-body-tertiary mb-4 bb-nav-a-plum">
+                    <div class="container-fluid">
+                      <a class="navbar-brand" style="color: plum !important;" href="#">BB</a>
+                      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                      </button>
+                      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+
+                        <ul class="navbar-nav me-auto mb-2 mb-lg-0 bb-nav-send-left">
+                          <li class="nav-item">
+                            <a class="nav-link" aria-current="page" href="#">Home</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">About</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">FAQs</a>
+                          </li>
+                          <li class="nav-item">
+                            <a class="nav-link" href="#">Contact</a>
+                          </li>
+                        </ul>
+
+                      </div>
+                    </div>
+                </nav>
+            </div>
+
+        </div>
+        <!--row for nav bar ends-->
+
+        <!--row for sign-up-->
+        <div class="row bb-form-container">
+
+            <div class="col-md-12 col-lg-6 bb-signUp-info">
+
+                <img src="images/bg-removebg-preview.png" class="img-fluid" alt="conversation">
 
             </div>  
 
 
-            <div class="col">
-                
+            <div class="col-md-12 col-lg-6 bb-right-border-top">
+
+                <form method="post" id="bb-form">
+                    <!--user info-->
+                    <p id="warn"></p>
+                    <div class="mb-3 col-md-12 col-lg-6">
+                        <label for="name" class="form-label">Fullname</label>
+                        <input type="text" class="form-control" id="name">
+                        <p id="empty-name"></p>
+                    </div>
+
+                    <div class="mb-3 col-md-12 col-lg-6">
+                      <label for="email" class="form-label">Email address</label>
+                      <input type="email" class="form-control" id="email" aria-describedby="emailHelp">
+                      <p id="empty-email"></p>
+                      <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
+                    </div>
+
+                    <div class="mb-3 col-md-12 col-lg-6">
+                      <label for="pwd" class="form-label">Password</label>
+                      <input type="password" class="form-control" id="pwd">
+                      <p id="empty-pwd"></p>
+                    </div>
+                    <!--user info ends-->
+
+                    <!--Checkbox-->
+                    <div class="bb-check-flex">
+
+                        <div class="mb-3 form-check">
+                            <input type="radio" name="user-gender" class="form-check-input" value="male" id="check-male">
+                            <label class="form-check-label" for="check-male">Male</label>
+                        </div>
+                        <div class="mb-3 form-check">
+                            <input type="radio" name="user-gender" class="form-check-input" value="female" id="check-female">
+                            <label class="form-check-label" for="check-female">Female</label>
+                        </div>
+
+                        <p id="bb-check-empty"></p>
+
+                    </div>
+                    <p id="all"></p>
+                    <!--Checkbox ends-->
+
+                    <!--validation button-->
+                    <button type="submit" class="btn mb-5 col-sm-4 bb-btn-plum">Login</button>
+                    <!--validation button ends-->
+                </form>
+
             </div>
 
         </div>
+        <!--row for nav bar ends-->
+
     </div>
 
+
+    <script src="script/jquery.js"></script>
+    <script src="bootstrap/js/bootstrap.bundle.js"></script>
+
+    <script>
+
+        $(document).ready(function () {
+
+            $('#bb-form').submit(function () {
+
+                var name = document.getElementById('name').value;
+                var email = document.getElementById('email').value;
+                var password = document.getElementById('pwd').value;
+                var checkMale = document.getElementById('check-male').value;
+                var checkFemale = document.getElementById('check-female').value;
+
+                if (name = '' || email == '' || password == '' || checkMale == '' || checkFemale == '') {
+                    document.getElementById('warn').innerHTML = '*No field should be left empty';
+                    document.getElementById('warn').style = 'color: red; font-size: 0.7em;';
+                    return false;
+                }
+
+                if (name == '') {
+                    document.getElementById('empty-name').innerHTML = '*This field cannot be empty';
+                    document.getElementById('empty-name').style = 'color: red; font-size: 0.7em;';
+                    return false;
+                } else {
+                    document.getElementById('empty-name').innerHTML = 'Looking good';
+                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                    return true;
+                }
+
+                if (email == '') {
+                    document.getElementById('empty-email').innerHTML = '*This field cannot be empty';
+                    document.getElementById('empty-email').style = 'color: red; font-size: 0.7em;';
+                    return false;
+                } else if (email == email) {
+                    document.getElementById('empty-name').innerHTML = 'Looking good';
+                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                    return true;
+                }
+
+                if (password == '') {
+                    document.getElementById('empty-pwd').innerHTML = '*This field cannot be empty';
+                    document.getElementById('empty-pwd').style = 'color: red; font-size: 0.7em;';
+                    return false;
+                } else {
+                    document.getElementById('empty-name').innerHTML = 'Looking good';
+                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                    return true;
+                }
+
+                if (checkMale == '' || checkFemale == '') {
+                    document.getElementById('bb-check-empty').innerHTML = '*This field cannot be empty';
+                    document.getElementById('bb-check-empty').style = 'color: red; font-size: 0.7em;';
+                    return false;
+                } else {
+                    document.getElementById('bb-check-empty').innerHTML = 'Looking good';
+                    document.getElementById('bb-check-empty').style = 'color: green; font-size: 0.7em;';
+                    return true;
+                }
+            });
+
+        })
+
+
+    </script>
 </body>
 </html>

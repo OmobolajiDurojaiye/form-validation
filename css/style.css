@@ -1,0 +1,84 @@
+/* * {
+    padding: 0 !important;
+    margin: 0 !important;
+} */
+
+.bb-nav {
+    /* border-bottom: 1px solid gray !important; */
+    position: fixed !important;
+    top: 0 !important;
+    width: 100% !important;
+    padding-left: 0 !important;
+    z-index: 1 !important;
+    background: #fff !important;
+    height: 10vh !important;
+}
+
+.bb-nav-a-plum ul li a {
+    color: grey !important;
+}
+
+.bb-nav-a-plum ul li a:hover {
+    color: plum !important;
+}
+
+.bb-form-container {
+    position: relative !important;
+    top: 10vh !important;
+}
+
+.bb-check-flex {
+    display: flex !important;
+}
+
+.bb-check-flex div {
+    margin-right: 20px !important;
+}
+
+.bb-nav-send-left {
+    position: relative !important;
+    left: 70% !important;
+}
+
+.bb-signUp-info {
+    border-right: 2px solid plum !important;
+    height: 90vh !important;
+    background-color: plum !important;
+}
+
+.bb-signUp-info img {
+    height: inherit !important;
+}
+
+.bb-form-center-align {
+    height: inherit;
+    border: 1px solid red;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    align-items: center !important;
+}
+
+.bb-right-border-top {
+    border-top: 1px solid plum !important;
+}
+
+.bb-btn-plum {
+    background-color: #fff !important;
+    border: 1px solid plum !important;
+    color: plum !important;
+}
+
+.bb-btn-plum:hover {
+    background-color: plum !important;
+    color: #fff !important;
+}
+
+form {
+    position: relative !important;
+    top: 10vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+}
