@@ -6,6 +6,9 @@
     <title>Sign Up || BB</title>
     <link rel="stylesheet" href="css/style.css">
     <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Agbalumo&family=Lato:wght@100&family=Montserrat:ital,wght@1,100&family=Open+Sans:wght@300&family=Poppins:ital,wght@0,100;1,100&family=Roboto:wght@100&family=Sometype+Mono&display=swap" rel="stylesheet">
 </head>
 <body>
     
@@ -16,7 +19,7 @@
 
             <div class="col">
                 <nav class="navbar bb-nav navbar-expand-lg bg-body-tertiary mb-4 bb-nav-a-plum">
-                    <div class="container-fluid">
+                    <div class="container-fluid bb-logo">
                       <a class="navbar-brand" style="color: plum !important;" href="#">BB</a>
                       <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -74,9 +77,12 @@
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
 
-                    <div class="mb-3 col-md-12 col-lg-6">
+                    <div class="mb-3 col-md-4 col-lg-6">
                       <label for="pwd" class="form-label">Password</label>
-                      <input type="password" class="form-control" id="pwd">
+                      <span class="bb-pwd-btn-flex">
+                        <input type="password" class="form-control bb-pwd-width" id="pwd">
+                        <button type="button" class="btn bb-btn-plum rounded-pill" id="bb-pwd-show-btn">Show</button>
+                      </span>
                       <p id="empty-pwd"></p>
                     </div>
                     <!--user info ends-->
@@ -118,6 +124,18 @@
     <script>
 
         $(document).ready(function () {
+
+            // $("#bb-pwd-show-btn").on({
+              
+            // })
+
+            var showing =  document.getElementById('bb-pwd-show-btn');
+            showing.onclick = function () {
+                document.getElementById('pwd').type = 'text';
+            }
+            //, showing.click function () {
+            //     document.getElementById('pwd').type = 'password';
+            // }
 
             $('#bb-form').submit(function () {
 

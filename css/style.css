@@ -1,7 +1,6 @@
-/* * {
-    padding: 0 !important;
-    margin: 0 !important;
-} */
+* {
+    font-family: poppins, sans-serif;
+}
 
 .bb-nav {
     /* border-bottom: 1px solid gray !important; */
@@ -14,8 +13,18 @@
     height: 10vh !important;
 }
 
+p {
+    font-weight: bold !important;
+}
+
+.bb-logo {
+    font-weight: bold !important;
+    font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif !important;
+}
+
 .bb-nav-a-plum ul li a {
     color: grey !important;
+    font-weight: bold !important;
 }
 
 .bb-nav-a-plum ul li a:hover {
@@ -46,8 +55,18 @@
     background-color: plum !important;
 }
 
+label {
+    color: rgb(228, 77, 228) !important;
+    font-weight: bold !important;
+}
+
+button {
+    font-weight: bold !important;
+}
+
 .bb-signUp-info img {
     height: inherit !important;
+    /* box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px; */
 }
 
 .bb-form-center-align {
@@ -61,6 +80,27 @@
 
 .bb-right-border-top {
     border-top: 1px solid plum !important;
+}
+
+.bb-pwd-width {
+    width: 75% !important;
+}
+
+@media (max-width: 576px) {
+    .bb-pwd-width {
+        width: 60% !important;
+    }
+
+    .bb-pwd-btn-flex {
+        display: flex !important;
+        justify-content: unset !important;
+        align-items: center !important;
+    }
+}
+
+.bb-pwd-btn-flex {
+    display: flex !important;
+    justify-content: space-between;
 }
 
 .bb-btn-plum {
