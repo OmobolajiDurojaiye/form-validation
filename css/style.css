@@ -2,6 +2,10 @@
     font-family: poppins, sans-serif;
 }
 
+/* body {
+    /* background-color: #141414 !important; 
+} */
+
 .bb-nav {
     /* border-bottom: 1px solid gray !important; */
     position: fixed !important;
@@ -9,7 +13,7 @@
     width: 100% !important;
     padding-left: 0 !important;
     z-index: 1 !important;
-    background: #fff !important;
+    /* background: #141414 !important; */
     height: 10vh !important;
 }
 

@@ -123,73 +123,83 @@
 
     <script>
 
+        //show and hide password
+        $("#bb-pwd-show-btn").on ({
+
+            click: function () {
+
+                $("#pwd").attr("type", "text");
+
+            },
+            mouseleave: function () {
+
+                $("#pwd").attr("type", "password");
+
+            }
+
+        });
+        //show and hide password ends
+
         $(document).ready(function () {
 
-            // $("#bb-pwd-show-btn").on({
-              
-            // })
-
-            var showing =  document.getElementById('bb-pwd-show-btn');
-            showing.onclick = function () {
-                document.getElementById('pwd').type = 'text';
-            }
-            //, showing.click function () {
-            //     document.getElementById('pwd').type = 'password';
+            // var showing =  document.getElementById('bb-pwd-show-btn');
+            // showing.onclick = function () {
+            //     document.getElementById('pwd').type = 'text';
             // }
 
             $('#bb-form').submit(function () {
 
-                var name = document.getElementById('name').value;
-                var email = document.getElementById('email').value;
-                var password = document.getElementById('pwd').value;
-                var checkMale = document.getElementById('check-male').value;
-                var checkFemale = document.getElementById('check-female').value;
+                var name = $('#name').val();
+                var email = $('#email').val();
+                var password = $('#pwd').val();
+                var checkMale = $('#check-male').val();
+                var checkFemale = $('#check-female').val();
 
-                if (name = '' || email == '' || password == '' || checkMale == '' || checkFemale == '') {
-                    document.getElementById('warn').innerHTML = '*No field should be left empty';
-                    document.getElementById('warn').style = 'color: red; font-size: 0.7em;';
-                    return false;
-                }
+                // if (name = '' || email == '' || password == '') {
+                //     $('#warn').html('*No field should be left empty');
+                //     $('#warn').css({"color":"red", "font-size" : "0.7em"});
+                //     return false;
+                // }
 
                 if (name == '') {
-                    document.getElementById('empty-name').innerHTML = '*This field cannot be empty';
-                    document.getElementById('empty-name').style = 'color: red; font-size: 0.7em;';
+                    $('#empty-name').html('*This field cannot be empty');
+                    $('#empty-name').css({"color":"red", "font-size" : "0.7em"});
                     return false;
-                } else {
-                    document.getElementById('empty-name').innerHTML = 'Looking good';
-                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                } else if (name != '') {
+                    $('empty-name').html("Looking good");
+                    $('empty-name').css({"color":"green", "font-size" : "0.7em"});
                     return true;
                 }
 
                 if (email == '') {
-                    document.getElementById('empty-email').innerHTML = '*This field cannot be empty';
-                    document.getElementById('empty-email').style = 'color: red; font-size: 0.7em;';
+                    $('#empty-email').html('*This field cannot be empty');
+                    $('#empty-email').css({"color":"red", "font-size" : "0.7em"});
                     return false;
-                } else if (email == email) {
-                    document.getElementById('empty-name').innerHTML = 'Looking good';
-                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                } else if (email != '') {
+                    $('empty-email').html("Looking good");
+                    $('empty-email').css({"color":"green", "font-size" : "0.7em"});
                     return true;
                 }
 
                 if (password == '') {
-                    document.getElementById('empty-pwd').innerHTML = '*This field cannot be empty';
-                    document.getElementById('empty-pwd').style = 'color: red; font-size: 0.7em;';
+                    $('#empty-pwd').html('*This field cannot be empty');
+                    $('#empty-pwd').css({"color":"red", "font-size" : "0.7em"});
                     return false;
-                } else {
-                    document.getElementById('empty-name').innerHTML = 'Looking good';
-                    document.getElementById('empty-name').style = 'color: green; font-size: 0.7em;';
+                } else if (password != '') {
+                    $('empty-pwd').html("Looking good");
+                    $('empty-pwd').css({"color":"green", "font-size" : "0.7em"});
                     return true;
                 }
 
-                if (checkMale == '' || checkFemale == '') {
-                    document.getElementById('bb-check-empty').innerHTML = '*This field cannot be empty';
-                    document.getElementById('bb-check-empty').style = 'color: red; font-size: 0.7em;';
-                    return false;
-                } else {
-                    document.getElementById('bb-check-empty').innerHTML = 'Looking good';
-                    document.getElementById('bb-check-empty').style = 'color: green; font-size: 0.7em;';
-                    return true;
-                }
+                // if (checkMale == '' || checkFemale == '') {
+                //     document.getElementById('bb-check-empty').innerHTML = '*This field cannot be empty';
+                //     document.getElementById('bb-check-empty').style = 'color: red; font-size: 0.7em;';
+                //     return false;
+                // } else {
+                //     document.getElementById('bb-check-empty').innerHTML = 'Looking good';
+                //     document.getElementById('bb-check-empty').style = 'color: green; font-size: 0.7em;';
+                //     return true;
+                // }
             });
 
         })
