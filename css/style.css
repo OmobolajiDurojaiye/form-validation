@@ -2,9 +2,15 @@
     font-family: poppins, sans-serif;
 }
 
-/* body {
-    /* background-color: #141414 !important; 
-} */
+body {
+    background-color: #141414 !important; 
+}
+
+input {
+    background-color: #141414 !important; 
+    border: 1px solid plum !important;
+    color: #fff !important;
+}
 
 .bb-nav {
     /* border-bottom: 1px solid gray !important; */
@@ -107,8 +113,15 @@ button {
     justify-content: space-between;
 }
 
+.bb-flex-center {
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    /* align-items: center !important; */
+}
+
 .bb-btn-plum {
-    background-color: #fff !important;
+    background-color: #141414 !important;
     border: 1px solid plum !important;
     color: plum !important;
 }
@@ -120,7 +133,7 @@ button {
 
 form {
     position: relative !important;
-    top: 10vh !important;
+    /* top: 10vh !important; */
     display: flex !important;
     flex-direction: column !important;
     align-items: center !important;
