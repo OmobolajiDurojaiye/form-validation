@@ -77,11 +77,11 @@
                       <!-- <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div> -->
                     </div>
 
-                    <div class="mb-3 col-md-4 col-lg-6">
+                    <div class="mb-3 col-md-12 col-lg-6">
                       <label for="pwd" class="form-label">Password</label>
                       <span class="bb-pwd-btn-flex">
                         <input type="password" class="form-control bb-pwd-width" id="pwd">
-                        <button type="button" class="btn bb-btn-plum rounded-pill" id="bb-pwd-show-btn">Show</button>
+                        <button type="button" style="color: plum !important;" class="btn " id="bb-pwd-show-btn">Show</button>
                       </span>
                       <p id="empty-pwd"></p>
                     </div>
@@ -106,7 +106,7 @@
                     <!--Checkbox ends-->
 
                     <!--validation button-->
-                    <button type="submit" class="btn mb-5 col-sm-4 bb-btn-plum">Login</button>
+                    <button type="submit" id="remove-dis" class="btn mb-5 col-sm-4 bb-btn-plum" disabled>Login</button>
                     <!--validation button ends-->
                 </form>
 
@@ -141,6 +141,19 @@
         //show and hide password ends
 
         $(document).ready(function () {
+
+            $(':radio').click(function() {
+                var stateForMale = $("#check-male").prop('checked');
+                var stateForFemale = $("#check-female").prop('checked');
+
+                if(stateForMale == true || stateForFemale == true) {
+                    $('#remove-dis').removeAttr('disabled');
+                } else {
+                    $('#remove-dis').attr('disabled', 'disabled')
+                }
+
+
+            })
 
             // var showing =  document.getElementById('bb-pwd-show-btn');
             // showing.onclick = function () {

@@ -92,26 +92,32 @@ button {
     border-top: 1px solid plum !important;
 }
 
-.bb-pwd-width {
-    width: 75% !important;
-}
+/* .bb-pwd-width {
+    width: 120% !important;
+} */
 
 @media (max-width: 576px) {
-    .bb-pwd-width {
+    /* .bb-pwd-width {
         width: 60% !important;
-    }
+    } */
 
-    .bb-pwd-btn-flex {
+    /* .bb-pwd-btn-flex {
         display: flex !important;
         justify-content: unset !important;
         align-items: center !important;
+    } */
+
+    #bb-pwd-show-btn {
+        position: relative;
+        left: 10%;
+        margin-top: -10vh;
     }
 }
 
-.bb-pwd-btn-flex {
-    display: flex !important;
-    justify-content: space-between;
-}
+/* .bb-pwd-btn-flex {
+    /* display: flex !important; */
+    /* justify-content: space-between; 
+} */
 
 .bb-flex-center {
     display: flex !important;
@@ -129,6 +135,12 @@ button {
 .bb-btn-plum:hover {
     background-color: plum !important;
     color: #fff !important;
+}
+
+#bb-pwd-show-btn {
+    position: relative;
+    left: 80%;
+    margin-top: -10vh;
 }
 
 form {
